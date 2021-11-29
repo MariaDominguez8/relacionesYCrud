@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= movie.title %>
+    </title>
+    <link rel='stylesheet' href='/css/style.css' />
+
+</head>
+
+<body>
+    <figure>
+        <img src="/img/logo-DH.png" alt="Logo Digital House">
+    </figure>
+    <h1>
+        <%= movie.title %>
+    </h1>
+    <br>
+    <p>RATING: <%= movie.rating %>
+    </p>
+    <p>AWARDS: <%= movie.awards %>
+    </p>
+    <p>LENGTH: <%= movie.length + ' min' %>
+    </p>
+    <p>RELEASE DATE: <%= movie.release_date %>
+    </p>
+    <br>
+
+    <section>
+        <br>
+        <p>
+            
+            <form action="/movies/delete/<%= movie.id %>" method="post">
+                <a class="botonAgregar" href="/movies/edit/<%= movie.id %>">Editar esta Pelicula</a>
+                <button type="submit" class="botonBorrar" href="/movies/delete/<%= movie.id %>">Eliminar esta Pelicula</button>
+                <a  class="botonVolver" href="/movies">Listado de Películas</a></p>
+
+            </form>
+            
+        </p>
+        <br>
+    </section>
+
+</body>
+
+</html>
